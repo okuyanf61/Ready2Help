@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EntryActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/entry_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-80dp"
+            android:contentDescription="@string/entry_logo"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/ic_entry_logo" />
+
+        <ImageView
+            android:id="@+id/entry_logo_divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/entry_logo"
+            app:srcCompat="@drawable/ic_entry_logo_divider" />
+
+        <TextView
+            android:id="@+id/entry_question_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/activity_horizontal_margin"
+            android:fontFamily="@font/bold"
+            android:text="@string/are_you_ready"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/entry_privacy_enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/regular"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="@string/entry_privacy_enter"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text_entry_privacy_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/regular"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="@string/entry_privacy_policy"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/entry_privacy_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="@string/entry_privacy_exit"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/button_entry_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/button_margin_horizontal"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_rounded"
+            android:fontFamily="@font/bold"
+            android:paddingVertical="@dimen/nav_header_vertical_spacing"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_entry_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:text="@string/login"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
