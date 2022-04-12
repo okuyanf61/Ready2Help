@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "39512685393",
+    "project_id": "ready2help-mfo",
+    "storage_bucket": "ready2help-mfo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39512685393:android:0d6470364fe2974fb5f170",
+        "android_client_info": {
+          "package_name": "com.mehmetfatih.ready2help"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39512685393-rh9t62vc97ibvp0klih3ouqav319m8kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE4msnEbQeYazevokJugTXK1pHeGZ0AXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39512685393-rh9t62vc97ibvp0klih3ouqav319m8kr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
