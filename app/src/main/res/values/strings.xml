@@ -37,4 +37,9 @@
     <string name="suggest_password_done">+ get our password</string>
     <string name="continue_button">Continue</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="choose_your_city">Choose your city</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 </resources>
