@@ -42,4 +42,6 @@
     <string name="choose_your_city">Choose your city</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="one_last_step">One Last Step</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
 </resources>
