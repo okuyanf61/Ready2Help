@@ -44,4 +44,6 @@
     <string name="female">Female</string>
     <string name="one_last_step">One Last Step</string>
     <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
 </resources>

@@ -63,7 +63,6 @@ public class SignUpActivityThree extends AppCompatActivity {
 
                 Intent intent = new Intent(SignUpActivityThree.this, LoginActivity.class);
 
-                // TODO: add person to database with serializing
                 DocumentReference docRef = db.collection("people").document(email);
                 docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
