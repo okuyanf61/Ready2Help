@@ -29,6 +29,7 @@ public class TaskDetailActivity extends AppCompatActivity {
 
     private Person owner;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +68,7 @@ public class TaskDetailActivity extends AppCompatActivity {
                 TextView taskStatus = findViewById(R.id.taskDetailStatus);
 
                 if (Objects.equals(mtask.getTaskStatus(), "Waiting")) {
+                    Log.d("TAG", owner.toString());
                     if (isElder) {
                         taskStatus.setText("Waiting for someone to take task");
                     } else {
@@ -78,14 +80,41 @@ public class TaskDetailActivity extends AppCompatActivity {
                             }
                         });
                     }
-                }
-                else {
+                } else {
                     if (isElder) {
                         taskStatus.setText("Task is taken");
                     } else {
                         taskStatus.setText("This task assigned to you.");
                     }
                 }
+
+                String user_type = "";
+                if (intent.getStringExtra("user_type") == null) {
+                    user_type = "";
+                } else {
+                    user_type = intent.getStringExtra("user_type");
+                }
+
+
+                if (user_type.equals("volunteer")) {
+                    if (Objects.equals(mtask.getTaskStatus(), "Waiting")) {
+
+                        taskStatus.setText("Take task");
+                        taskStatus.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                changeTaskStatus("Taken", mtask.getTaskName());
+                                Log.d("TASK ADDED", "TASK ADDED");
+                                Intent newIntent = new Intent(TaskDetailActivity.this, VolunteerActivity.class);
+                                newIntent.putExtras(intent);
+                                startActivity(newIntent);
+                            }
+                        });
+                    } else {
+                        taskStatus.setText("This task is taken.");
+                    }
+                }
+
 
                 String[] splited = owner.getName().split("\\s+");
                 String firstName = splited[0];
@@ -114,6 +143,12 @@ public class TaskDetailActivity extends AppCompatActivity {
 
             }
         });
-
     }
+
+    private void changeTaskStatus(String status, String taskName) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference docRef = db.collection("tasks").document(taskName);
+        docRef.update("taskStatus", status);
+    }
+
 }
