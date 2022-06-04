@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ready2Help">
         <activity
+            android:name=".VolunteerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_volunteer"
+            android:theme="@style/Theme.Ready2Help.NoActionBar" />
+        <activity
+            android:name=".ElderActivity"
+            android:exported="false"
+            android:label="@string/title_activity_elder"
+            android:theme="@style/Theme.Ready2Help.NoActionBar" />
+        <activity
             android:name=".SignUpActivityThree"
             android:exported="false" />
         <activity
@@ -22,18 +32,8 @@
             android:name=".ElderAddTaskActivity"
             android:exported="false" />
         <activity
-            android:name=".ElderActivity"
-            android:exported="false"
-            android:label="@string/title_activity_elder"
-            android:theme="@style/Theme.Ready2Help.NoActionBar" />
-        <activity
             android:name=".VolunteerTaskDetailActivity"
             android:exported="false" />
-        <activity
-            android:name=".VolunteerActivity"
-            android:exported="false"
-            android:label="@string/title_activity_volunteer"
-            android:theme="@style/Theme.Ready2Help.NoActionBar" />
         <activity
             android:name=".SignUpActivityOne"
             android:exported="false" />
