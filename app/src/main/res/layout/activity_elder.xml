@@ -8,7 +8,7 @@
     tools:context=".ElderActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/elderHamburger"
         android:layout_width="23dp"
         android:layout_height="18dp"
         android:layout_marginStart="16dp"
@@ -28,7 +28,7 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/elderHamburger" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

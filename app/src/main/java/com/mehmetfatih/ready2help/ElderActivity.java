@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -56,15 +57,11 @@ public class ElderActivity extends AppCompatActivity {
         });
         rvTasks.setLayoutManager(new LinearLayoutManager(this));
 
-        Log.d("Name: ", oldIntent.getStringExtra("name"));
-        Log.d("Email: ", oldIntent.getStringExtra("owner"));
-        Log.d("Phone: ", oldIntent.getStringExtra("phoneNumber"));
-        Log.d("Date of Birth: ", oldIntent.getStringExtra("dateOfBirth"));
-        Log.d("Male: ", String.valueOf(oldIntent.getBooleanExtra("male", true)));
-        Log.d("City: ", oldIntent.getStringExtra("city"));
-
-
+        ImageView menu = findViewById(R.id.elderHamburger);
+        menu.setOnClickListener(v -> {
+            Intent intent = new Intent(ElderActivity.this, ProfileActivity.class);
+            intent.putExtras(oldIntent);
+            startActivity(intent);
+        });
     }
 }
-
-// intent.putExtras(oldIntent);
