@@ -2,6 +2,7 @@ package com.mehmetfatih.ready2help;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,6 +75,7 @@ public class ElderTaskAdapter extends RecyclerView.Adapter<ElderTaskAdapter.View
     public void onBindViewHolder(ElderTaskAdapter.ViewHolder holder, int position) {
         // Get the data model based on position
         Task task = mElderTasks.get(position);
+        Log.d("TAG", "Task: " + task.toString());
 
         // Set item views based on your views and data model
         TextView textView = holder.taskNameTextView;

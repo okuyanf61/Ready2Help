@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -23,6 +24,7 @@ public class ElderActivity extends AppCompatActivity {
 
     ArrayList<Task> tasks;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FloatingActionButton addTask;
 
 
     @Override
@@ -63,5 +65,35 @@ public class ElderActivity extends AppCompatActivity {
             intent.putExtras(oldIntent);
             startActivity(intent);
         });
+
+        addTask = findViewById(R.id.elderAddTask);
+        addTask.setOnClickListener(v -> {
+            Intent intent = new Intent(ElderActivity.this, AddTaskActivity.class);
+            intent.putExtras(oldIntent);
+            startActivityForResult(intent, 1);
+        });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                Task task = new Task(
+                        data.getStringExtra("taskName"),
+                        data.getStringExtra("taskDescription"),
+                        data.getStringExtra("taskDate"),
+                        data.getStringExtra("taskPhone"),
+                        data.getStringExtra("taskAddress"),
+                        data.getStringExtra("taskStatus"),
+                        data.getStringExtra("taskOwner")
+                );
+                tasks.add(task);
+                ElderTaskAdapter adapter = new ElderTaskAdapter(tasks);
+                RecyclerView rvTasks = (RecyclerView) findViewById(R.id.elderRecylerView);
+                rvTasks.setAdapter(adapter);
+            }
+        }
+    }
+
 }
