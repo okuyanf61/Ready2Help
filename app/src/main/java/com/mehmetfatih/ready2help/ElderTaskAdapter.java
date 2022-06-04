@@ -98,6 +98,8 @@ public class ElderTaskAdapter extends RecyclerView.Adapter<ElderTaskAdapter.View
             imageView.setImageResource(R.mipmap.ic_taken);
         }
 
+
+
     }
 
     // Returns the total count of items in the list

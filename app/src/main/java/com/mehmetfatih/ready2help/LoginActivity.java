@@ -94,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("dateOfBirth", document.getString("dateOfBirth"));
                                 intent.putExtra("city", document.getString("city"));
                                 intent.putExtra("owner", email);
+                                intent.putExtra("elder", isElder);
                                 startActivity(intent);
                             }
                             else {
