@@ -1,5 +1,7 @@
 package com.mehmetfatih.ready2help;
 
+import com.google.gson.GsonBuilder;
+
 public class Task {
 
     private String taskName;
@@ -81,14 +83,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
-                "taskName='" + taskName + '\'' +
-                ", taskDescription='" + taskDescription + '\'' +
-                ", taskDate='" + taskDate + '\'' +
-                ", taskPhone='" + taskPhone + '\'' +
-                ", taskAddress='" + taskAddress + '\'' +
-                ", taskStatus='" + taskStatus + '\'' +
-                ", taskOwner='" + taskOwner + '\'' +
-                '}';
+        return new GsonBuilder().create().toJson(this, Task.class);
     }
 }

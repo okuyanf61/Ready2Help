@@ -2,6 +2,8 @@ package com.mehmetfatih.ready2help;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
+import java.time.Instant;
 import java.time.temporal.TemporalAccessor;
 import java.util.Calendar;
 import java.util.Date;
@@ -98,7 +101,14 @@ public class ElderTaskAdapter extends RecyclerView.Adapter<ElderTaskAdapter.View
             imageView.setImageResource(R.mipmap.ic_taken);
         }
 
-
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), TaskDetailActivity.class);
+                intent.putExtra("task", task.toString());
+                view.getContext().startActivity(intent);
+            }
+        });
 
     }
 

@@ -124,23 +124,25 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout30">
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textViewv14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/regular"
             android:text="Description"
             android:textSize="15sp" />
 
-        <EditText
-            android:id="@+id/addTaskDescription"
+        <TextView
+            android:id="@+id/taskDetailTaskDescription"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/input_rounded"
             android:ems="10"
             android:fontFamily="@font/regular"
-            android:hint="At 15:30, my grandson has to be picked up \nfrom Emirbeyazıt Primary School and \ndropped off at the address I specified. If the \nvolunteer wants, can use my car. "
-            android:inputType="textMultiLine"
-            android:textSize="15sp" />
+            android:text="At 15:30, my grandson has to be picked up \nfrom Emirbeyazıt Primary School and \ndropped off at the address I specified. If the \nvolunteer wants, can use my car. "
+            android:textSize="15sp"
+            android:lines="4"
+            android:minLines="4"
+            android:singleLine="false" />
     </LinearLayout>
 
     <LinearLayout
