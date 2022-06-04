@@ -88,6 +88,12 @@ public class LoginActivity extends AppCompatActivity {
                                 else {
                                     intent = new Intent(LoginActivity.this, VolunteerActivity.class);
                                 }
+                                intent.putExtra("name", document.getString("name"));
+                                intent.putExtra("phoneNumber", document.getString("phoneNumber"));
+                                intent.putExtra("male", document.getBoolean("male"));
+                                intent.putExtra("dateOfBirth", document.getString("dateOfBirth"));
+                                intent.putExtra("city", document.getString("city"));
+                                intent.putExtra("owner", email);
                                 startActivity(intent);
                             }
                             else {
