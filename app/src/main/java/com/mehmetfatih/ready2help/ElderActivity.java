@@ -29,7 +29,7 @@ public class ElderActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarElder.toolbar);
-        binding.appBarElder.fab.setOnClickListener(new View.OnClickListener() {
+        binding.appBarElder.buttonElderAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
